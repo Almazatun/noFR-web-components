@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
     entry: {
         App: "./src/app.js",
-        // component1: "./src/component_1.js"
+        Header: "./src/components/header.js"
     },
     //mode "development give more information when code transpiling in the main.js file in the dist folder"
     mode: "development",
@@ -21,7 +21,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
+                test: /\.(s[ac]|c)ss$/,
                 use: [
                     'style-loader',
                     'css-loader',
