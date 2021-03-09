@@ -1,8 +1,8 @@
 /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
+/*!**********************************!*\
+  !*** ./src/components/header.js ***!
+  \**********************************/
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28,17 +28,17 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var template = document.createElement('template');
-template.innerHTML = "\n<style>\n\n .app {\n  margin: 0;\n  height: 100vh;\n  background: cornflowerblue;\n }\n</style>\n\n<div class=\"app\"> \n    <header-component> </header-component> \n</div>\n";
+template.innerHTML = "\n<style>\n  header {\n  position: absolute;\n  top: 0;\n  background-color: plum;\n  }\n</style>\n<header> </header>\n";
 
-var App = /*#__PURE__*/function (_HTMLElement) {
-  _inherits(App, _HTMLElement);
+var Header = /*#__PURE__*/function (_HTMLElement) {
+  _inherits(Header, _HTMLElement);
 
-  var _super = _createSuper(App);
+  var _super = _createSuper(Header);
 
-  function App() {
+  function Header() {
     var _this;
 
-    _classCallCheck(this, App);
+    _classCallCheck(this, Header);
 
     _this = _super.call(this);
 
@@ -51,11 +51,11 @@ var App = /*#__PURE__*/function (_HTMLElement) {
     return _this;
   }
 
-  return App;
+  return Header;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement)); //
 
 
-window.customElements.define('app-component', App);
+window.customElements.define('header-component', Header);
 /******/ })()
 ;
-//# sourceMappingURL=App.bundler.js.map
+//# sourceMappingURL=Header.bundler.js.map
