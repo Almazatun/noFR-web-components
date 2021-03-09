@@ -1,18 +1,25 @@
 const template = document.createElement('template')
 template.innerHTML = `
 <style>
-    h3 {
-    margin: 0;
-    }
-    .app {
-        padding: 20px;
-        margin: 0;
-        height: 100vh;
-        background: #997999;
-    };
-    
+
+ .app {
+  margin: 0;
+  height: 100vh;
+  background: cornflowerblue;
+ }
+ .header {
+    height: 65px;
+    background-color: lightskyblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
 </style>
-<div class="app"> </div>
+
+<div class="app"> 
+    <header-component class="header"> </header-component> 
+</div>
 `
 
 class App extends HTMLElement {
@@ -22,3 +29,6 @@ class App extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
+
+//
+window.customElements.define('app-component', App)
