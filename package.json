@@ -1,0 +1,23 @@
+{
+  "name": "nofr-web-components",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "repository": "git@github.com:Almazatun/noFR-web-components.git",
+  "author": "Almaz P",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --watch",
+    "start": "webpack serve"
+  },
+  "dependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "^8.2.2",
+    "node-sass": "^5.0.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
