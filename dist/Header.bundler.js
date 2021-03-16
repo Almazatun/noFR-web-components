@@ -7,6 +7,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
@@ -28,7 +32,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var template = document.createElement('template');
-template.innerHTML = "\n<style>\n  header {\n  position: absolute;\n  top: 0;\n  background-color: plum;\n  }\n</style>\n<header> </header>\n";
+template.innerHTML = "\n<style>\n    .pages {\n        display: flex;\n        align-items: center;  \n        height: 90%;\n        width: auto;\n        margin: 0 20px 0 0;\n    }\n    \n    .pages > span {\n    font-size: 36px;\n    padding: 10px;\n    border-radius: 8px;\n    margin: 0 10px;\n    background-color: plum;\n    cursor: pointer;\n    transition: 0.3s;\n    font-family: sans-serif;\n    }\n    \n    .pages > span:hover {\n        background-color: palevioletred;\n        transition: all;\n    }\n    \n</style>\n<div id=\"pages\" class=\"pages\"> </div>\n";
 
 var Header = /*#__PURE__*/function (_HTMLElement) {
   _inherits(Header, _HTMLElement);
@@ -42,14 +46,51 @@ var Header = /*#__PURE__*/function (_HTMLElement) {
 
     _this = _super.call(this);
 
-    _this.attachShadow({
+    var shadowRoot = _this.attachShadow({
       mode: "open"
     });
 
-    _this.shadowRoot.appendChild(template.content.cloneNode(true));
+    shadowRoot.appendChild(template.content.cloneNode(true)); //Bind
+
+    _this.onClickPage = _this.onClickPage.bind(_assertThisInitialized(_this)); //Pages
+
+    _this.pages = [{
+      id: "1",
+      pageName: '😺'
+    }, {
+      id: "2",
+      pageName: '🐶'
+    }, {
+      id: "3",
+      pageName: '🦊'
+    }, {
+      id: "4",
+      pageName: '🦄'
+    }];
+    _this.pagesElement = shadowRoot.getElementById('pages');
+
+    _this.pages.forEach(function (page, index) {
+      var span = document.createElement('span');
+      span.innerText = _this.pages[index].pageName;
+      span.setAttribute('id', "".concat(_this.pages[index].id));
+      span.classList.add('page');
+
+      _this.pagesElement.appendChild(span);
+    }); //
+
+
+    _this.pagesElement.addEventListener('click', _this.onClickPage);
 
     return _this;
   }
+
+  _createClass(Header, [{
+    key: "onClickPage",
+    value: function onClickPage(event) {
+      var item = event.target;
+      alert(item.innerText);
+    }
+  }]);
 
   return Header;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement)); //

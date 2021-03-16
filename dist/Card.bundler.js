@@ -1,8 +1,8 @@
 /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
+/*!********************************!*\
+  !*** ./src/components/card.js ***!
+  \********************************/
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28,34 +28,35 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var template = document.createElement('template');
-template.innerHTML = "\n<style>\n\n .app {\n  margin: 0;\n  height: 100vh;\n  background: cornflowerblue;\n }\n .header {\n    height: 85px;\n    background-color: lightskyblue;\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-end;\n    align-items: center;\n  }\n</style>\n\n<div class=\"app\"> \n    <header-component class=\"header\"> </header-component> \n    <content-component> </content-component> \n</div>\n";
+template.innerHTML = "\n<style>\n   .card_emoji {\n    background-color: lightskyblue;\n    height: 2rem;\n    width: 5rem;\n   }\n</style>\n\n<section class=\"card-emoji\"> \n     <span> </span>\n</section>\n";
 
-var App = /*#__PURE__*/function (_HTMLElement) {
-  _inherits(App, _HTMLElement);
+var Card = /*#__PURE__*/function (_HTMLElement) {
+  _inherits(Card, _HTMLElement);
 
-  var _super = _createSuper(App);
+  var _super = _createSuper(Card);
 
-  function App() {
+  function Card() {
     var _this;
 
-    _classCallCheck(this, App);
+    _classCallCheck(this, Card);
 
     _this = _super.call(this);
+    _this.shadowRT = _this.shadowRoot;
 
     _this.attachShadow({
       mode: "open"
     });
 
-    _this.shadowRoot.appendChild(template.content.cloneNode(true));
+    _this.shadowRT.appendChild(template.content.cloneNode(true));
 
+    _this.querySelector('span').innerText = _this.shadowRT.getAttribute("emoji");
     return _this;
   }
 
-  return App;
-}( /*#__PURE__*/_wrapNativeSuper(HTMLElement)); //
+  return Card;
+}( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 
-
-window.customElements.define('app-component', App);
+window.customElements.define('card-component', Card);
 /******/ })()
 ;
-//# sourceMappingURL=App.bundler.js.map
+//# sourceMappingURL=Card.bundler.js.map

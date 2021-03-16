@@ -1,8 +1,8 @@
 /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
+/*!***********************************!*\
+  !*** ./src/components/content.js ***!
+  \***********************************/
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28,17 +28,17 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var template = document.createElement('template');
-template.innerHTML = "\n<style>\n\n .app {\n  margin: 0;\n  height: 100vh;\n  background: cornflowerblue;\n }\n .header {\n    height: 85px;\n    background-color: lightskyblue;\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-end;\n    align-items: center;\n  }\n</style>\n\n<div class=\"app\"> \n    <header-component class=\"header\"> </header-component> \n    <content-component> </content-component> \n</div>\n";
+template.innerHTML = "\n<style>\n    .main {\n        margin: 85px 0 0 0;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n    }\n</style>\n\n<main class=\"main\"> \n       <card-component emoji=\"\uD83D\uDE1B\"></card-component>\n       <card-component emoji=\"\uD83E\uDD84\"></card-component>\n       <card-component emoji=\"\uD83E\uDD76\"></card-component>\n       <card-component emoji=\"\uD83D\uDC54\"></card-component>\n       <card-component emoji=\"\uD83D\uDC77\u200D\u2642\uFE0F\"></card-component>\n</main>\n";
 
-var App = /*#__PURE__*/function (_HTMLElement) {
-  _inherits(App, _HTMLElement);
+var Content = /*#__PURE__*/function (_HTMLElement) {
+  _inherits(Content, _HTMLElement);
 
-  var _super = _createSuper(App);
+  var _super = _createSuper(Content);
 
-  function App() {
+  function Content() {
     var _this;
 
-    _classCallCheck(this, App);
+    _classCallCheck(this, Content);
 
     _this = _super.call(this);
 
@@ -51,11 +51,11 @@ var App = /*#__PURE__*/function (_HTMLElement) {
     return _this;
   }
 
-  return App;
+  return Content;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement)); //
 
 
-window.customElements.define('app-component', App);
+window.customElements.define('content-component', Content);
 /******/ })()
 ;
-//# sourceMappingURL=App.bundler.js.map
+//# sourceMappingURL=Content.bundler.js.map
