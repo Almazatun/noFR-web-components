@@ -3,7 +3,9 @@ const path = require('path')
 module.exports = {
     entry: {
         App: "./src/app.js",
-        Header: "./src/components/header.js"
+        Header: "./src/components/header.js",
+        Content: "./src/components/content.js",
+        Card: "./src/components/card.js",
     },
     //mode "development give more information when code transpiling in the main.js file in the dist folder"
     mode: "development",
