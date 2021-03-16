@@ -4,11 +4,11 @@ template.innerHTML = `
 
  .app {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: cornflowerblue;
  }
  .header {
-    height: 65px;
+    height: 85px;
     background-color: lightskyblue;
     display: flex;
     flex-direction: row;
@@ -19,6 +19,7 @@ template.innerHTML = `
 
 <div class="app"> 
     <header-component class="header"> </header-component> 
+    <content-component class="content"></content-component> 
 </div>
 `
 

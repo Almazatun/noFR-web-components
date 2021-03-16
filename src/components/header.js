@@ -10,13 +10,19 @@ template.innerHTML = `
     }
     
     .pages > span {
+    font-size: 36px;
     padding: 10px;
     border-radius: 8px;
     margin: 0 10px;
     background-color: plum;
     cursor: pointer;
-    
+    transition: 0.3s;
     font-family: sans-serif;
+    }
+    
+    .pages > span:hover {
+        background-color: palevioletred;
+        transition: all;
     }
     
 </style>
@@ -28,30 +34,35 @@ class Header extends HTMLElement {
         super();
         const shadowRoot = this.attachShadow({mode: "open"});
         shadowRoot.appendChild(template.content.cloneNode(true));
+
+        //Bind
+        this.onClickPage = this.onClickPage.bind(this)
+
         //Pages
         this.pages = [
-            {id: "1", pageName: 'Page1'},
-            {id: "2", pageName: 'Page2'},
-            {id: "3", pageName: 'Page3'},
-            {id: "4", pageName: 'Page4'},
+            {id: "1", pageName: '😺'},
+            {id: "2", pageName: '🐶'},
+            {id: "3", pageName: '🦊'},
+            {id: "4", pageName: '🦄'},
         ]
 
         this.pagesElement = shadowRoot.getElementById('pages')
         this.pages.forEach((page, index) => {
             const span = document.createElement('span')
             span.innerText = this.pages[index].pageName
+            span.setAttribute('id', `${this.pages[index].id}`)
             span.classList.add('page')
             this.pagesElement.appendChild(span)
 
         })
-        //Bind
-        this.onClick = this.onClick.bind(this)
 
-        this.pagesElement.addEventListener('click', this.onClick)
+        //
+        this.pagesElement.addEventListener('click', this.onClickPage)
     }
 
-    onClick() {
-       console.log("Hello")
+    onClickPage(event) {
+        const item = event.target
+        alert(item.innerText)
     }
 
 }
